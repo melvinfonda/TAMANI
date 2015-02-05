@@ -1389,20 +1389,21 @@ pre code {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 1500px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 1500px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
   .container {
-    width: 1170px;
+    width: 1500px;
   }
 }
 .container-fluid {
@@ -2419,7 +2420,14 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+
 }
+
+.form-login {
+  width : 150 px;
+
+}
+
 .radio,
 .checkbox {
   position: relative;
@@ -2665,6 +2673,7 @@ select[multiple].form-group-lg .form-control {
     margin-bottom: 0;
     vertical-align: middle;
   }
+  
   .form-inline .form-control {
     display: inline-block;
     width: auto;
