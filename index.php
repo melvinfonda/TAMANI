@@ -27,9 +27,15 @@ require_once('view.php');
 		</div>
 		<div class="row">
 			<?php
+			// set privilege
+			if (isset($_SESSION['login_user']))
+				$privilege = $_SESSION['privilege'];
+			else
+				$privilege = 0;
+			
 			$pengaduans = get_all_pengaduan();
 			foreach ($pengaduans as $pengaduan) {
-				echo format_pengaduan($pengaduan);
+				echo format_pengaduan($pengaduan, $privilege);
 			}
 			?>
 		</div>
