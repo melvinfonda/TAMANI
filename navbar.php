@@ -13,9 +13,6 @@ session_start();
 			<li class="page-scroll">
 				<a href="index.php">Daftar Pengaduan</a>
 			</li>
-			<li class="page-scroll">
-				<a href="registrasi.php"><span class="glyphicon glyphicon-user"></span> Daftar</a>
-			</li>
 			<?php
 				if (isset($_SESSION['login_user']))
 					require_once('bar_logged.php');

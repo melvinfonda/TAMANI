@@ -38,6 +38,7 @@
 					<label for="Judul">Judul</label>
 					<input type="text" class="form-control" id="judul" placeholder="Judul">
 					</div>
+					<div class="form-group">
 					<label for="Taman">Taman</label>
 					<input type="text" class="form-control" id="taman" placeholder="Taman">
 					</div>
