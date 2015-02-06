@@ -21,29 +21,33 @@ require_once('login.php'); // Includes Login Script
 
 	<?php require_once('navbar.php'); ?>
 
-	 <div class="container">
-  <div class="jumbotron">
-    <h1>TAMANI</h1>
-    <p>Website Pengaduan Taman</p>
+	<div class="container">
+    <div class="jumbotron">
+      <h1>TAMANI</h1>
+      <p>Website Pengaduan Taman</p>
+    </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="thumbnail">
+            <div class="caption">
+                <dl>
+                  <p> 23-Januari-2015  | Fonda | belum diproses </p>
+                </dl>
+              <h3><a href="www.google.com" >Thumbnail label</a></h3>
+              <p>saya mendaftar secara online bpjs kesehatan pada tanggal 4-Feb-2015 dengan nomor registrasi pendaftaran 1[***************]0[***************][***************]1614 an. MULIANI & DESIKA. 
+                setelah mendapatkan email konfirmasi dari admin BPJS dan mendownload virtual account, saya melakukan pembayaran via atm BRI. setelah pembayaran sukses, saya coba buka kembali link yg dikirim oleh admin BPJS via email untuk mencetak e-id. namun link untuk mencetak e-id tidak muncul dan ada keterangan "belum membayar iuran". 
+                saya sudah coba berkali kali namun keterangan tetap sama. mohon tindak lanjutnya agar saya dapat mencetak e-id tersebut secara online. </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+
   </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Pengaduan 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Pengaduan 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Pengaduan 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-</div>
+
+
+  
 	
 </body>
 </html>
