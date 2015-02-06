@@ -11,7 +11,7 @@ require_once('login.php'); // Includes Login Script
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
+<link rel="stylesheet" href="css/custom.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <title> TAMANI </title>
