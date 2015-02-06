@@ -11,10 +11,10 @@ session_start();
 		</div>
 		<ul class="nav navbar-nav navbar-right">
 				<li class="page-scroll">
-					<a href="http://www.google.com/search?q=daftar+pengaduan">Daftar Pengaduan</a>
+					<a href="index.php">Daftar Pengaduan</a>
 				</li>
 				<li class="page-scroll">
-					<a href="http://www.google.com/search?q=daftar"><span class="glyphicon glyphicon-user"></span> Daftar</a>
+					<a href="registrasi.php"><span class="glyphicon glyphicon-user"></span> Daftar</a>
 				</li>
 				<?php
 					if (isset($_SESSION['login_user']))
