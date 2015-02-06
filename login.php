@@ -25,10 +25,17 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 	$db = $connection->select_db("tamani");
 	
 	// SQL query to fetch information of registerd users and finds user match.
-	$query = $connection->query("select * from user where password='$password' AND username='$username'");
+	$query = $connection->query("SELECT * FROM 
+((SELECT user.*, 10 level FROM user NATURAL JOIN masyarakat) UNION
+(SELECT user.*, 20 level FROM user NATURAL JOIN dinas_pertamanan) UNION
+(SELECT user.*, 30 level FROM user NATURAL JOIN dinas_terkait)) temp
+WHERE username='$username' AND password='$password';");
+	var_dump($query);
 	$rows = $query->num_rows;
 	if ($rows == 1) {
-		$_SESSION['login_user']=$username; // Initializing Session
+		$row = $query->fetch_assoc();
+		$_SESSION['login_user']= $username; // Initializing Session
+		$_SESSION['privilege'] = (int)$row['level'];
 		
 	} else {
 		$error = "Username or Password is invalid";
