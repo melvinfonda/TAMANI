@@ -1,21 +1,26 @@
-.navbar {
+nav {
     text-transform: uppercase;
     font-weight: 700;
-    color: blue;
+    background: #E8AE40;
 }
 
 
 .jumbotron {
     color: #fff;
-    background: #FFCC33;
+    background: black;
+	background-color: rgba(0,0,0 , 0.25);
 }
 
-.caption {
-
+.caption , .thumbnail{
+	background: white;
     color: #fff;
-    background: #0099FF;
 }
 
-section {
+
+
+body {
     color: #fff;
+	background-image : url("../img/garden.jpg");
+	background-size : 100%;
+	background-attachment : fixed;
 }
