@@ -7,12 +7,14 @@ session_start();
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header page-scroll">
 			<a class="navbar-brand" href="index.php">TAMANI</a>
-			<ul class="nav navbar-nav navbar-right">
+			
+		</div>
+		<ul class="nav navbar-nav navbar-right">
 				<li class="page-scroll">
-					<a href="http://www.google.com/search?q=daftar+pengaduan">Daftar Pengaduan</a>
+					<a href="index.php">Daftar Pengaduan</a>
 				</li>
 				<li class="page-scroll">
-					<a href="http://www.google.com/search?q=daftar"><span class="glyphicon glyphicon-user"></span> Daftar</a>
+					<a href="registrasi.php"><span class="glyphicon glyphicon-user"></span> Daftar</a>
 				</li>
 				<?php
 					if (isset($_SESSION['login_user']))
@@ -21,7 +23,6 @@ session_start();
 						require_once('bar_login.php'); 
 				?>
 			</ul>
-		</div>
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid -->
