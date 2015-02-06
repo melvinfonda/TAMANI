@@ -11,6 +11,9 @@ session_start();
 		</div>
 		<ul class="nav navbar-nav navbar-right">
 				<li class="page-scroll">
+					<a href="cud_taman.php">Taman</a>
+				</li>
+				<li class="page-scroll">
 					<a href="index.php">Daftar Pengaduan</a>
 				</li>
 				<li class="page-scroll">
