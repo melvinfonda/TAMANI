@@ -1,9 +1,5 @@
 <?php
 require_once('login.php'); // Includes Login Script
-
-if(isset($_SESSION['login_user'])){
-	header("location: profile.php");
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,11 +20,6 @@ if(isset($_SESSION['login_user'])){
 <body>
 
 	<?php require_once('navbar.php'); ?>
-
-	<div class="container">
-	<p>jing</p>
-	<?php echo $error; ?>
-	</div>
 
 	 <div class="container">
   <div class="jumbotron">

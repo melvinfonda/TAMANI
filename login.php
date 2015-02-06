@@ -3,8 +3,10 @@ session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 
 if (isset($_POST['submit'])) {
+if ($_POST['submit'] == "login") {
 if (empty($_POST['username']) || empty($_POST['password'])) {
 	$error = "Username or Password is invalid";
+	
 } else {
 	// Define $username and $password
 	$username=$_POST['username'];
@@ -33,5 +35,9 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 	}
 	
 	$connection->close(); // Closing Connection
-}} // END if (isset($_POST['submit']))
+}}
+if ($_POST['submit'] == "logout") {
+	session_destroy();
+}
+} // END if (isset($_POST['submit']))
 ?>
