@@ -25,7 +25,7 @@ require_once('view.php');
 			<?php
 			$pengaduans = get_all_pengaduan();
 			foreach ($pengaduans as $pengaduan) {
-			echo format_pengaduan($pengaduan);
+				echo format_pengaduan($pengaduan);
 			}
 			?>
 		</div>
