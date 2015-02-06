@@ -9,6 +9,7 @@ function format_pengaduan($pengaduan) {
 		<dl>
 		<p> '.format_tanggal($pengaduan['tanggal']).' | '.$pengaduan['nama_pelapor'].' | '.keterangan_status($pengaduan['status']).' </p>
 		</dl>
+		<h3>'.$pengaduan['judul'].'</h3>
 		<h5><b>'.$pengaduan['nama_taman'].'</b></h5>
 		<p>'.$pengaduan['isi'].'</p>';
 	
