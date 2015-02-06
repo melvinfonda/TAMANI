@@ -26,36 +26,30 @@ require_once('login.php'); // Includes Login Script
       <h1>TAMANI</h1>
       <p>Website Pengaduan Taman</p>
     </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-12">
-          <div class="thumbnail">
-            <div class="caption">
-                <dl>
-                  <dt>Nomor Laporan</dt>
-                  <dd>L-0092139</dd>
-                  <dt>No pengaduan</dt>
-                  <dd>P-WEQEQEW</dd>
-                  <dt>Tanggal</dt>
-                  <dd>12 Jan 2015S</dd>
-                  <dt>Isi laporan</dt>
-                  <dd>...</dd>
-                  <dt>Instansi</dt>
-                  <dd>...</dd>
-
-
-
-
-
-                </dl>
-
-
-            </div>
+    <div class="row">
+      <div class="col-xs-12 c">
+        <div class="thumbnail">
+          <div class="caption">
+              <dl>
+                <dt>Nomor Laporan</dt>
+                <dd>L-0092139</dd>
+                <br>
+                <dt>No pengaduan</dt>
+                <dd>P-WEQEQEW</dd>
+                <br>
+                <dt>Tanggal</dt>
+                <dd>12 Jan 2015S</dd>
+                <br >
+                <dt>Isi laporan</dt>
+                <dd> Kepada:Yth. Walikota Bandung Bpk. Ir. Ridwan Kamil di tempat.Tolong SPBU Jl.Supratman Bdg ditutup. Karena lahan tersebut peruntukannya utk taman. Kalau tidak kami LSM PENJARA (Pemantau Kenerja Aparatur Negara) Kota Bandung akan menutupnya. Tks. Dari: Pius Manalu, SE (Ketua LSM PENJARA KOTA BANDUNG).</dd>
+                <br>
+                <dt>Instansi</dt>
+                <dd>Satpol PP</dd>
+              </dl>
           </div>
         </div>
-        
       </div>
-
-
+    </div>
   </div>
 
 

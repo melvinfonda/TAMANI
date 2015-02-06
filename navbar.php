@@ -10,22 +10,21 @@ session_start();
 			
 		</div>
 		<ul class="nav navbar-nav navbar-right">
+
 				<li class="page-scroll">
 					<a href="cud_taman.php">Taman</a>
 				</li>
-				<li class="page-scroll">
-					<a href="index.php">Daftar Pengaduan</a>
-				</li>
-				<li class="page-scroll">
-					<a href="registrasi.php"><span class="glyphicon glyphicon-user"></span> Daftar</a>
-				</li>
-				<?php
-					if (isset($_SESSION['login_user']))
-						require_once('bar_logged.php');
-					else
-						require_once('bar_login.php'); 
-				?>
-			</ul>
+			<li class="page-scroll">
+				<a href="index.php">Daftar Pengaduan</a>
+			</li>
+			<?php
+				if (isset($_SESSION['login_user']))
+					require_once('bar_logged.php');
+				else
+					require_once('bar_login.php'); 
+			?>
+		</ul>
+
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid -->

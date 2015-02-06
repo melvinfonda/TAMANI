@@ -1,0 +1,21 @@
+.navbar {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: blue;
+}
+
+
+.jumbotron {
+    color: #fff;
+    background: #FFCC33;
+}
+
+.caption {
+
+    color: #fff;
+    background: #0099FF;
+}
+
+section {
+    color: #fff;
+}
