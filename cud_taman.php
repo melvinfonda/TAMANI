@@ -12,7 +12,7 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
+<link rel="stylesheet" href="css/custom.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <title> TAMANI </title>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="row">                               
-				<table class="table table-striped">
+				<table class="table">
 						<tr>
 						<th>Id</th>
 						<th>Name</th>
