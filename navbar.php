@@ -12,7 +12,7 @@ session_start();
 		<ul class="nav navbar-nav navbar-right">
 
 				<li class="page-scroll">
-					<a href="cud_taman.php">Taman</a>
+					<a href="crud_taman.php">Taman</a>
 				</li>
 			<li class="page-scroll">
 				<a href="index.php">Daftar Pengaduan</a>

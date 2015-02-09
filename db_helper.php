@@ -43,8 +43,7 @@ function get_all_garden(){
 	$result = $mysqli->query("SELECT * FROM taman");
 	$rows = array();
 	for ($i = 0; $i < $result->num_rows; ++$i) {
-		$row = $result->fetch_assoc();
-		//echo $row['nama'] ;
+		$row = $result->fetch_assoc();		
 		$rows[$i] = $row;
 	}
 	
