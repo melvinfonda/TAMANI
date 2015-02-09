@@ -43,14 +43,17 @@
 					</tr>
 					<?php
 						$gardens = get_all_garden();
-						foreach ($gardens as $garden) {
+						foreach ($gardens as $garden) {							
 							echo '<tr>
 							<td>'.$garden['id'].'</td>
 							<td>'.$garden['nama'].'</td>
 							<td>'.$garden['lokasi'].'</td>
 							<td><a class="btn btn-default" href="edit_garden.php" role="button">Edit</a></td>
-							<td><a class="btn btn-default" href="del_garden.php?id='.$garden['id'].'" onClick=
-                              "return konfirmasi()" role="button">Delete</a></td>
+							<td><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
+								<input type="hidden" name="id" value='.$garden['id'].' />
+								<input type="Submit" value="Delete" class="btn btn-default" role="button">
+								</form>
+							</td>
 							</tr>';
 							
 						}

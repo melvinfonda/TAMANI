@@ -3,8 +3,8 @@
     if (mysqli_connect_errno()){
     	echo "Fail to connect to database".mysqli_connect_error();
     }
-	if (isset($_GET['id'])){
-		$hapus=$_GET['id'];
+	if (isset($_POST['id'])){
+		$hapus=$_POST['id'];
 		$strSql= "delete from taman where id=$hapus";
 		mysqli_query($con,$strSql);		
 	    if (!mysqli_query($con,$strSql)){
@@ -12,7 +12,7 @@
 		}
 		else{
 			header("Location:index.php");
-		}
+		}		
 	}
 	mysqli_close($con);
 ?>
