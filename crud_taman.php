@@ -41,14 +41,6 @@
 						<th>Location</th>
 						<th colspan="2">Operation</th>
 					</tr>
-					  <tr>
-						<td>1</td>
-						<td>Jomblo</td>
-						<td>Jalan Pasopati</td>
-						<td><a class="btn btn-default" href="edit_garden.php" role="button">Edit</a></td>
-						<td><a class="btn btn-default" href="edit_garden.php" role="button">Delete</a></td>
-					  </tr>
-					  <tr>
 					<?php
 						$gardens = get_all_garden();
 						foreach ($gardens as $garden) {
@@ -57,8 +49,10 @@
 							<td>'.$garden['nama'].'</td>
 							<td>'.$garden['lokasi'].'</td>
 							<td><a class="btn btn-default" href="edit_garden.php" role="button">Edit</a></td>
-							<td><a class="btn btn-default" href="edit_garden.php" role="button">Delete</a></td>
+							<td><a class="btn btn-default" href="del_garden.php?id='.$garden['id'].'" onClick=
+                              "return konfirmasi()" role="button">Delete</a></td>
 							</tr>';
+							
 						}
 					?>					
 				</table>				
@@ -84,5 +78,14 @@
         </div>
     </footer>
 	
+<script type="text/javascript">
+	
+	  function konfirmasi(){
+      tanya=confirm('Apakah anda yakin menghapus post ini?');
+      if (tanya==true) return true;
+      else return false;
+  }
+</script>
+    
 </body>
 </html>

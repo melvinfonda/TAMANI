@@ -53,8 +53,6 @@ function get_all_garden(){
 	return $rows;
 }
 
-
-
 function get_laporan($id_pengaduan ){
 	/* return all laporan, where no_pengaduan*/
 	
