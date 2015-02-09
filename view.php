@@ -59,4 +59,29 @@ function format_tanggal($stanggal) {
 
 	return $iangka.'-'.nama_bulan($ibulan).'-'.$itahun;
 }
+
+
+
+function format_laporan ($laporan)
+{
+	$result="<dl>
+                <dt>Nomor Laporan</dt>
+                <dd>".$laporan['nomor']."</dd>
+                <br>
+                <dt>No pengaduan</dt>
+                <dd>".$laporan['no_pengaduan']."</dd>
+                <br>
+                <dt>Tanggal</dt>
+                <dd>".format_tanggal($laporan['tanggal'])."</dd>
+                <br >
+                <dt>Isi laporan</dt>
+                <dd>". $laporan['isi']."</dd>
+                <br>
+                <dt>Instansi</dt>
+                <dd>".get_instansi($laporan['id_instansi'])['nama']."</dd>
+              </dl>";
+
+     return $result;
+	
+}
 ?>

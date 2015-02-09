@@ -54,4 +54,46 @@ function get_all_garden(){
 	return $rows;
 }
 
+
+
+function get_laporan($id_pengaduan ){
+	/* return all laporan, where no_pengaduan*/
+	
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+
+	/* check connection */
+	if (mysqli_connect_errno()) {
+		printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+	}
+
+	$result = $mysqli->query("SELECT * FROM tindak_lanjut WHERE no_pengaduan=".$id_pengaduan."");
+	$row = mysqli_fetch_array($result);
+	
+	/* close connection */
+	$mysqli->close();
+	
+	return $row;
+}
+
+function get_instansi($id)
+{
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+
+	/* check connection */
+	if (mysqli_connect_errno()) {
+		printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+	}
+
+	$result = $mysqli->query("SELECT * FROM instansi WHERE id=".$id."");
+	$row = mysqli_fetch_array($result);
+	
+	/* close connection */
+	$mysqli->close();
+	
+	return $row;
+}
+
+
 ?>
