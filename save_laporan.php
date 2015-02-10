@@ -21,16 +21,13 @@
 
 	echo $itanggal." ".$isi." ".$no_pengaduan." ".$id_instansi;
 
-	mysqli_query($mysqli,"INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi) 
+	mysqli_query($mysqli,"INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, id_instansi) 
 		VALUES ('', '$itanggal','$isi','$no_pengaduan','$id_instansi')");
 
-	//echo "hahah";
-	//$mysqli->query("INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi) 
-	//	VALUES (null,'20140202','dsdsd','1','1')");
 	
 	
 	/* close connection */
 	$mysqli->close();
 
-	//header('Location: entri_laporan.php');
+	header('Location: index.php');
 ?>
