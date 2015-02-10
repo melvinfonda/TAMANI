@@ -56,8 +56,7 @@
 					<label for="kontak">Nomor Kontak</label>
 					<input type="text" class="form-control" name="Kontak" id="Kontak" placeholder="Nomor Kontak">
 					</div>
-					
-					<input type="submit" name="submit" value="Simpan" class="submit-button" >
+					<input type="submit" name="submit" value="Simpan" class="btn btn-primary" >
 					</form>
 
 				</div>
