@@ -1,10 +1,4 @@
 <li class="page-scroll">
-	<a href="index.php">Daftar Laporan</a>
-</li>
-<li class="page-scroll">
-	<a href="index.php">Daftar Pengaduan</a>
-</li>
-<li class="page-scroll">
 	<a href="registrasi.php"><span class="glyphicon glyphicon-user"></span> Daftar</a>
 </li>
 <li class="page-scroll">
