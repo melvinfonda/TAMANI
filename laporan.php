@@ -25,8 +25,10 @@ require_once('view.php');
 
 	<div class="container">
     <div class="jumbotron">
-      <h1>TAMANI</h1>
-      <p>Website Pengaduan Taman</p>
+    <img src="img/tree.png"  style="float:left; width:150px;">
+    <img src="img/Bandung.png"  style="float:right; width:150px;">
+      <center><h1>TAMANI</h1>
+      <p>Website Pengaduan Taman Kota Bandung</p></center>
     </div>
     <div class="row">
       <div class="col-xs-12 c">
