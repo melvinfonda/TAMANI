@@ -36,7 +36,6 @@
             <div class="row">                               
 				<table class="table">
 						<tr>
-						<th>Id</th>
 						<th>Name</th>
 						<th>Location</th>
 						<th colspan="2">Operation</th>
@@ -45,7 +44,6 @@
 						$gardens = get_all_garden();
 						foreach ($gardens as $garden) {
 							echo '<tr>
-							<td>'.$garden['id'].'</td>
 							<td>'.$garden['nama'].'</td>
 							<td>'.$garden['lokasi'].'</td>
 							<td><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>

@@ -1,3 +1,9 @@
+<?php
+	require_once('db_helper.php');
+	$tamans = get_all_garden();
+	$instansis = get_all_instansi();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +36,9 @@
                 </div>
             </div>
             <div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p>Entri belum bisa dilakukan karena belum ada instansi atau taman</p>
+				</div>
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
@@ -41,10 +50,11 @@
 					<div class="form-group">
 					<label for="Taman">Taman</label>
 					<select class="form-control" id="Taman" name="Kategori">
+					
 						<option>Jomblo</option>
 						<option>Cinta</option>
 						<option>DotA</option>
-					  </select>
+					</select>
 					</div>
 					<div class="form-group">
 					<label for="isi">Isi Aduan</label>

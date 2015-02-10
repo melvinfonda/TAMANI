@@ -77,7 +77,6 @@ ON pengaduan.no_pengaduan = tindak_lanjut.no_pengaduan");
 	return $rows;
 }
 
-
 function get_pengaduan($no_pengaduan) {
 	/* return all pengaduan, pengaduan have these attributes:
 	 * no_pengaduan, judul, tanggal, isi, 
@@ -119,7 +118,7 @@ function get_all_garden(){
 	$result = $mysqli->query("SELECT * FROM taman");
 	$rows = array();
 	for ($i = 0; $i < $result->num_rows; ++$i) {
-		$row = $result->fetch_assoc();		
+		$row = $result->fetch_assoc();
 		$rows[$i] = $row;
 	}
 	
@@ -147,6 +146,28 @@ function get_laporan($id_pengaduan ){
 	$mysqli->close();
 	
 	return $row;
+}
+
+function get_all_instansi() {
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+
+	/* check connection */
+	if (mysqli_connect_errno()) {
+		printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+	}
+
+	$result = $mysqli->query("SELECT * FROM instansi;");
+	$rows = array();
+	for ($i = 0; $i < $result->num_rows; ++$i) {
+		$row = $result->fetch_assoc();
+		$rows[$i] = $row;
+	}
+	
+	/* close connection */
+	$mysqli->close();
+	
+	return $rows;
 }
 
 function get_instansi($id)

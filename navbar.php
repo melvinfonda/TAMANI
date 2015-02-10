@@ -15,6 +15,8 @@ session_start();
 					$privilege = $_SESSION['privilege'];
 					if ($privilege === 10)
 						require_once('bar_logged.php');
+					else if ($privilege === 30)
+						require_once('bar_terkait.php');
 				} else
 					require_once('bar_login.php'); 
 			?>

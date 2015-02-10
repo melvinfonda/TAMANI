@@ -1,5 +1,3 @@
-<html>
-<body>
 <?php
 $con=mysqli_connect("localhost","root","","tamani");
 // Check connection
@@ -15,8 +13,5 @@ VALUES ('$namataman', '$lokasi')");
 
 mysqli_close($con);
 
-
 header('location: crud_taman.php');
 ?>
-</body>
-</html>
