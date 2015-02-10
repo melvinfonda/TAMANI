@@ -48,7 +48,7 @@
 							<td>'.$garden['id'].'</td>
 							<td>'.$garden['nama'].'</td>
 							<td>'.$garden['lokasi'].'</td>
-							<td><a class="btn btn-default" href="edit_garden.php" role="button">Edit</a></td>
+							<td><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
 							<td><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
 								<input type="hidden" name="id" value='.$garden['id'].' />
 								<input type="Submit" value="Delete" class="btn btn-default" role="button">
@@ -60,7 +60,7 @@
 					?>					
 				</table>				
 				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
-					<a class="btn btn-default" href="edit_garden.php" role="button">Add Garden</a>						
+					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
 				</div>
 
             </div>
@@ -85,8 +85,7 @@
 	
 	  function konfirmasi(){
       tanya=confirm('Apakah anda yakin menghapus post ini?');
-      if (tanya==true) return true;
-      else return false;
+      return tanya;
   }
 </script>
     

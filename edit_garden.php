@@ -11,6 +11,19 @@
 <link rel="stylesheet" href="css/custom.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+<?php
+    $id = $_GET['var'];
+    $con=mysqli_connect("localhost","root","","tamani");
+    // Check connection
+    if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+    $query = mysqli_query($con,"SELECT nama, lokasi FROM taman WHERE id=$id");
+    while ($hasil = mysqli_fetch_array($query)) {
+        $nama = $hasil['nama'];
+        $lokasi = $hasil['lokasi'];
+    }
+?>
 <title> TAMANI </title>
 </head>
 
@@ -33,14 +46,14 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form>
+					<form method="post" action="save_old_garden.php?var=<?php echo $id; ?>">
 					<div class="form-group">
 					<label for="nama">Nama Taman</label>
-					<input type="text" class="form-control" id="nama" placeholder="Nama Taman">
+					<input type="text" class="form-control" value="<?php echo $nama;?>" name="Nama" id="Nama" placeholder="Nama Taman">
 					</div>
 					<div class="form-group">
 					<label for="username">Lokasi</label>
-					<input type="text" class="form-control" id="lokasi" placeholder="Lokasi">
+					<input type="text" class="form-control" value="<?php echo $lokasi;?>" name="Lokasi" id="Lokasi" placeholder="Lokasi">
 					</div>
 					
 					<button type="submit" class="btn btn-default">Submit</button>
