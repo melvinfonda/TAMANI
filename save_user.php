@@ -1,4 +1,5 @@
 <?php
+require_once('db_helper.php');
 $error = '';
 if (isset($_POST['submit'])) {
 	if ($_POST['submit'] === 'simpan') {

@@ -1,6 +1,5 @@
 <?php
 	require_once('save_user.php');
-	$error = 'This is an error';
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="post" action="save_user.php">
+                    <form method="post">
 					<div class="form-group">
 					<label for="nama">Nama</label>
 					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama">
@@ -61,13 +60,15 @@
 					<input type="text" class="form-control" name="Kontak" id="Kontak" placeholder="Nomor Kontak">
 					</div>
 					<?php
-						if ($error === '');
-						else
-							echo '<p style="{color: red}">'.$error.'</p>';
+					if ($error === '');
+					else
+						echo
+					'<div class="form-group" style="background-color: white; color: red">
+					<p>'.$error.'</p>
+					</div>';
 					?>
 					<button type="submit" name="submit" value="simpan" class="btn btn-default">Simpan</input>
 					</form>
-
 				</div>
             </div>
         </div>
