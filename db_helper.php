@@ -77,6 +77,33 @@ ON pengaduan.no_pengaduan = tindak_lanjut.no_pengaduan");
 	return $rows;
 }
 
+
+function get_pengaduan($no_pengaduan) {
+	/* return all pengaduan, pengaduan have these attributes:
+	 * no_pengaduan, judul, tanggal, isi, 
+	 * kategori, status, username_pelapor, id_taman */
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+
+	/* check connection */
+	if (mysqli_connect_errno()) {
+		printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+	}
+
+	$result = $mysqli->query("SELECT * FROM pengaduan JOIN instansi WHERE pengaduan.kategori = instansi.kategori");
+	$rows = array();
+	for ($i = 0; $i < $result->num_rows; ++$i) {		
+		$row = $result->fetch_assoc();		
+		$rows[$i] = $row;
+	}
+	
+	/* close connection */
+	$mysqli->close();
+	
+	return $rows;
+}
+
+
 function get_all_garden(){
 	/* return all garden, garden have these attributes:
 		id, nama, lokasi */
@@ -134,6 +161,40 @@ function get_instansi($id)
 
 	$result = $mysqli->query("SELECT * FROM instansi WHERE id=".$id."");
 	$row = mysqli_fetch_array($result);
+	
+	/* close connection */
+	$mysqli->close();
+	
+	return $row;
+}
+
+function ubah_tanggal($stanggal)
+{
+	$itahun = (int)substr($stanggal, 0, 4);
+	$ibulan = (int)substr($stanggal, 4, 2);
+	$iangka = (int)substr($stanggal, 6, 2);
+
+	return $iangka.$ibulan.$itahun;
+
+}
+
+function add_laporan($no_pengaduan)
+{
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+
+	/* check connection */
+	if (mysqli_connect_errno()) {
+		printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+	}
+
+	//$mysqli_query($mysqli,"INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi) 
+	//	VALUES (null, ubah_tanggal(".$_POST['tanggal']."),".$_POST['isi'].",'$no_pengaduan','1')");
+
+	echo "hahah";
+	$mysqli->query("INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi) 
+		VALUES (null,'20140202','dsdsd','1','1')");
+	
 	
 	/* close connection */
 	$mysqli->close();
