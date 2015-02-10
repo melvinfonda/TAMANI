@@ -30,12 +30,19 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 (SELECT user.*, 20 level FROM user NATURAL JOIN dinas_pertamanan) UNION
 (SELECT user.*, 30 level FROM user NATURAL JOIN dinas_terkait)) temp
 WHERE username='$username' AND password='$password';");
-	var_dump($query);
 	$rows = $query->num_rows;
 	if ($rows == 1) {
 		$row = $query->fetch_assoc();
 		$_SESSION['login_user']= $username; // Initializing Session
+		$privilege = (int)$row['level'];
+		if ($privilege === 30) {
+			$query0 = $connection->query("SELECT id_instansi FROM dinas_terkait WHERE username='$username';");
+			$row0 = $query0->fetch_assoc();
+			$_SESSION['id_instansi'] = (int)$row0['id_instansi'];
+		}
+			
 		$_SESSION['privilege'] = (int)$row['level'];
+		
 		
 	} else {
 		$error = "Username or Password is invalid";
