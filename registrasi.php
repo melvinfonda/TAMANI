@@ -1,3 +1,7 @@
+<?php
+	require_once('save_user.php');
+	$error = 'This is an error';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,8 +60,12 @@
 					<label for="kontak">Nomor Kontak</label>
 					<input type="text" class="form-control" name="Kontak" id="Kontak" placeholder="Nomor Kontak">
 					</div>
-					
-					<input type="submit" name="submit" value="Simpan" class="submit-button" >
+					<?php
+						if ($error === '');
+						else
+							echo '<p style="{color: red}">'.$error.'</p>';
+					?>
+					<button type="submit" name="submit" value="simpan" class="btn btn-default">Simpan</input>
 					</form>
 
 				</div>

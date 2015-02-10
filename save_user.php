@@ -1,22 +1,18 @@
-<html>
-<body>
 <?php
-$con=mysqli_connect("localhost","root","","tamani");
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+$error = '';
+if (isset($_POST['submit'])) {
+	if ($_POST['submit'] === 'simpan') {
+		$user_info = array();
+		$user_info['username']  = $_POST['Username'];
+		$user_info['password']  = $_POST['Password'];
+		$user_info['nama']      = $_POST['Nama'];
+		$user_info['email']     = $_POST['Email'];
+		$user_info['no_ktp']    = $_POST['KTP'];
+		$user_info['no_kontak'] = $_POST['Kontak'];
+		$error = simpan_masyarakat($user_info);
+		
+		if ($error === '')
+			header('Location: index.php');
+	}
 }
-
-$username = mysqli_real_escape_string($con, $_POST['Username']);
-$password = mysqli_real_escape_string($con, $_POST['Password']);
-
-mysqli_query($con,"INSERT INTO user (username , password)
-VALUES ('$username', '$password')");
-
-mysqli_close($con);
-
-
-header('Location: index.php');
 ?>
-</body>
-</html>

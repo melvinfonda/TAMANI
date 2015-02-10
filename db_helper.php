@@ -1,4 +1,68 @@
 <?php
+function simpan_user($mysqli, $uinfo) {
+	/* Prepared statement, stage 1: prepare */
+	if (!($stmt = $mysqli->prepare("INSERT INTO user(username, password) VALUES (?, ?)"))) {
+		return "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	}
+	
+	/* Prepared statement, stage 2: bind and execute */
+	if (!$stmt->bind_param("s", $uinfo['username'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	if (!$stmt->bind_param("s", $uinfo['password'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
+	if (!$stmt->execute()) {
+		return "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	return '';
+}
+
+function simpan_masyarakat($uinfo) {
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+		
+	// Check connection
+	if (mysqli_connect_errno()) {
+		return "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
+	$error = simpan_user($mysqli, $uinfo);
+	if ($error === '');
+		// do nothing
+	else
+		return $error;
+	
+	/* Prepared statement, stage 1: prepare */
+	if (!($stmt = $mysqli->prepare("INSERT INTO user(username, no_ktp, email, nama, no_hp) VALUES (?, ?, ?, ?, ?)"))) {
+		return "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	}
+	
+	/* Prepared statement, stage 2: bind and execute */
+	if (!$stmt->bind_param("s", $uinfo['username'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	if (!$stmt->bind_param("s", $uinfo['no_ktp'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	if (!$stmt->bind_param("s", $uinfo['email'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	if (!$stmt->bind_param("s", $uinfo['nama'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	if (!$stmt->bind_param("s", $uinfo['no_kontak'])) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
+	if (!$stmt->execute()) {
+		return "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	$mysqli->close();
+	return '';
+}
 
 function get_all_pengaduan() {
 	/* return all pengaduan, pengaduan have these attributes:
