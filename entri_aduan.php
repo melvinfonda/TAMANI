@@ -40,7 +40,11 @@
 					</div>
 					<div class="form-group">
 					<label for="Taman">Taman</label>
-					<input type="text" class="form-control" name="Taman" id="taman" placeholder="Taman">
+					<select class="form-control" id="Taman" name="Kategori">
+						<option>Jomblo</option>
+						<option>Cinta</option>
+						<option>DotA</option>
+					  </select>
 					</div>
 					<div class="form-group">
 					<label for="isi">Isi Aduan</label>
@@ -54,7 +58,7 @@
 						<option>Kebersihan</option>
 						<option>Fasilitas</option>
 					  </select>
-					</div>					
+					</div>
 					</div>
 					
 					

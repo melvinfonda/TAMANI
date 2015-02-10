@@ -43,7 +43,7 @@
 					</tr>
 					<?php
 						$gardens = get_all_garden();
-						foreach ($gardens as $garden) {							
+						foreach ($gardens as $garden) {
 							echo '<tr>
 							<td>'.$garden['id'].'</td>
 							<td>'.$garden['nama'].'</td>
@@ -51,7 +51,7 @@
 							<td><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
 							<td><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
 								<input type="hidden" name="id" value='.$garden['id'].' />
-								<input type="Submit" value="Delete" class="btn btn-default" role="button">
+								<button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
 								</form>
 							</td>
 							</tr>';

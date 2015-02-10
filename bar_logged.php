@@ -1,4 +1,10 @@
 <li class="page-scroll">
+	<a href="index.php">Daftar Laporan</a>
+</li>
+<li class="page-scroll">
+	<a href="index.php">Daftar Pengaduan</a>
+</li>
+<li class="page-scroll">
 	<a href="entri_aduan.php">Tambah Pengaduan</a>
 </li>
 <li class="page-scroll">

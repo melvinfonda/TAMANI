@@ -10,17 +10,12 @@ session_start();
 			
 		</div>
 		<ul class="nav navbar-nav navbar-right">
-
-				<li class="page-scroll">
-					<a href="crud_taman.php">Taman</a>
-				</li>
-			<li class="page-scroll">
-				<a href="index.php">Daftar Pengaduan</a>
-			</li>
 			<?php
-				if (isset($_SESSION['login_user']))
-					require_once('bar_logged.php');
-				else
+				if (isset($_SESSION['privilege'])) {
+					$privilege = $_SESSION['privilege'];
+					if ($privilege === 10)
+						require_once('bar_logged.php');
+				} else
 					require_once('bar_login.php'); 
 			?>
 		</ul>
