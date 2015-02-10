@@ -33,8 +33,7 @@ require_once('view.php');
         <div class="thumbnail">
           <div class="caption">
             <?php 
-
-              $laporan=get_laporan($_GET['id_pengaduan']);
+              $laporan=get_laporan($_GET['nomor']);
               echo format_laporan($laporan);
             ?>
              

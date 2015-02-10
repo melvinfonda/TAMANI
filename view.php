@@ -15,7 +15,7 @@ function format_pengaduan($pengaduan) {
 	
 	if (!is_null($pengaduan['no_tindak_lanjut']))
 		$result = $result.'
-		<a href="view_report.php?nomor='.$pengaduan['no_tindak_lanjut'].'">
+		<a href="laporan.php?nomor='.$pengaduan['no_tindak_lanjut'].'">
 		<button type="button" class="btn btn-primary">Laporan</button>
 		</a>';
 	
