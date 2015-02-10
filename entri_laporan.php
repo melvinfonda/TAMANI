@@ -35,18 +35,18 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form method="post" action="add_laporan (<?php echo $_GET['no_pengaduan']?> )">
+					<form method="post" action="save_laporan.php">
 					<div class="form-group">
 					<label for="nomorpengaduan">Nomor Pengaduan</label>
-					<input type="text" class="form-control" id="nomorpengaduan" placeholder="Nomor Pengaduan">
+					<input type="text" class="form-control" name="nomor_pengaduan" placeholder="Nomor Pengaduan">
 					</div>
 					<div class="form-group">
 					<label for="Tanggal">Tanggal</label>
-					<input type="date" class="form-control" id="tanggal">
+					<input type="date" class="form-control" name="tanggal">
 					</div>
 					<div class="form-group">
 					<label for="isi">Isi</label>
-					<textarea class="form-control" rows="3"></textarea>
+					<textarea class="form-control" rows="3" name="isi" ></textarea>
 					</div>
 					 <div class="col-lg-10 text-center"></div>
 					<button type="submit" class="btn btn-default">Submit</button>
