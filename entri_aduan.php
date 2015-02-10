@@ -1,5 +1,6 @@
 <?php
 	require_once('db_helper.php');
+	require_once('entri_helper.php');
 	$tamans = get_all_garden();
 	$instansis = get_all_instansi();
 ?>
@@ -36,48 +37,12 @@
                 </div>
             </div>
             <div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<p>Entri belum bisa dilakukan karena belum ada instansi atau taman</p>
-				</div>
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form method="post" action="save_aduan.php">
-					<div class="form-group">
-					<label for="Judul">Judul</label>
-					<input type="text" class="form-control" name="Judul" id="judul" placeholder="Judul">
-					</div>
-					<div class="form-group">
-					<label for="Taman">Taman</label>
-					<select class="form-control" id="Taman" name="Kategori">
-					
-						<option>Jomblo</option>
-						<option>Cinta</option>
-						<option>DotA</option>
-					</select>
-					</div>
-					<div class="form-group">
-					<label for="isi">Isi Aduan</label>
-					<textarea class="form-control" name="Isi" rows="3"></textarea>
-					</div>
-					<div class="form-group">
-					<div class="btn-group">
-					<label for="Kategori">Kategori (pilih salah satu) :</label>
-					  <select class="form-control" id="Kategori" name="Kategori">
-						<option>Keamanan</option>
-						<option>Kebersihan</option>
-						<option>Fasilitas</option>
-					  </select>
-					</div>
-					</div>
-					
-					
-					
-					<div class="col-lg-10 text-center"></div>
-					<button type="submit" class="btn btn-default">Submit</button>
-					</form>
-
-				</div>
+				<?php
+					if (count($tamans) === 0 || count($instansis) === 0)
+						say_sorry();
+					else
+						display_form($tamans, $instansis);
+				?>
             </div>
         </div>
     </section>
