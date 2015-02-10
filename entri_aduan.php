@@ -33,23 +33,23 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form>
+					<form method="post" action="save_aduan.php">
 					<div class="form-group">
 					<label for="Judul">Judul</label>
-					<input type="text" class="form-control" id="judul" placeholder="Judul">
+					<input type="text" class="form-control" name="Judul" id="judul" placeholder="Judul">
 					</div>
 					<div class="form-group">
 					<label for="Taman">Taman</label>
-					<input type="text" class="form-control" id="taman" placeholder="Taman">
+					<input type="text" class="form-control" name="Taman" id="taman" placeholder="Taman">
 					</div>
 					<div class="form-group">
 					<label for="isi">Isi Aduan</label>
-					<textarea class="form-control" rows="3"></textarea>
+					<textarea class="form-control" name="Isi" rows="3"></textarea>
 					</div>
 					<div class="form-group">
 					<div class="btn-group">
-					<label for="sel1">Kategori (pilih salah satu) :</label>
-					  <select class="form-control" id="sel1">
+					<label for="Kategori">Kategori (pilih salah satu) :</label>
+					  <select class="form-control" id="Kategori" name="Kategori">
 						<option>Keamanan</option>
 						<option>Kebersihan</option>
 						<option>Fasilitas</option>

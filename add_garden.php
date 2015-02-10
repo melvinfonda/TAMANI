@@ -33,17 +33,17 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form>
-					<div class="form-group">
-					<label for="nama">Nama Taman</label>
-					<input type="text" class="form-control" id="nama" placeholder="Nama Taman">
-					</div>
-					<div class="form-group">
-					<label for="username">Lokasi</label>
-					<input type="text" class="form-control" id="lokasi" placeholder="Lokasi">
-					</div>
-					
-					<button type="submit" class="btn btn-default">Submit</button>
+					<form method="post" action="save_new_garden.php">
+    					<div class="form-group">
+        					<label for="nama">Nama Taman</label>
+        					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama Taman">
+    					</div>
+    					<div class="form-group">
+        					<label for="username">Lokasi</label>
+        					<input type="text" class="form-control" name="Lokasi" id="Lokasi" placeholder="Lokasi">
+    					</div>
+    					
+    					<button type="submit" class="btn btn-default">Submit</button>
 					</form>					
 
 				</div>

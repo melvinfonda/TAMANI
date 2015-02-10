@@ -41,29 +41,26 @@
 						<th>Location</th>
 						<th colspan="2">Operation</th>
 					</tr>
-					  <tr>
-						<td>1</td>
-						<td>Jomblo</td>
-						<td>Jalan Pasopati</td>
-						<td><a class="btn btn-default" href="edit_garden.php" role="button">Edit</a></td>
-						<td><a class="btn btn-default" href="edit_garden.php" role="button">Delete</a></td>
-					  </tr>
-					  <tr>
 					<?php
 						$gardens = get_all_garden();
-						foreach ($gardens as $garden) {
+						foreach ($gardens as $garden) {							
 							echo '<tr>
 							<td>'.$garden['id'].'</td>
 							<td>'.$garden['nama'].'</td>
 							<td>'.$garden['lokasi'].'</td>
-							<td><a class="btn btn-default" href="edit_garden.php" role="button">Edit</a></td>
-							<td><a class="btn btn-default" href="edit_garden.php" role="button">Delete</a></td>
+							<td><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
+							<td><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
+								<input type="hidden" name="id" value='.$garden['id'].' />
+								<input type="Submit" value="Delete" class="btn btn-default" role="button">
+								</form>
+							</td>
 							</tr>';
+							
 						}
 					?>					
 				</table>				
 				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
-					<a class="btn btn-default" href="edit_garden.php" role="button">Add Garden</a>						
+					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
 				</div>
 
             </div>
@@ -84,5 +81,13 @@
         </div>
     </footer>
 	
+<script type="text/javascript">
+	
+	  function konfirmasi(){
+      tanya=confirm('Apakah anda yakin menghapus post ini?');
+      return tanya;
+  }
+</script>
+    
 </body>
 </html>

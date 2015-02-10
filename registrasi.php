@@ -1,3 +1,7 @@
+<?php
+	require_once('save_user.php');
+	$error = 'This is an error';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,35 +35,37 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form>
+                    <form method="post" action="save_user.php">
 					<div class="form-group">
 					<label for="nama">Nama</label>
-					<input type="text" class="form-control" id="nama" placeholder="Nama">
+					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama">
 					</div>
 					<div class="form-group">
 					<label for="username">Username</label>
-					<input type="text" class="form-control" id="username" placeholder="Username">
+					<input type="text" class="form-control" name="Username" id="Username" placeholder="Username">
 					</div>
 					<div class="form-group">
 					<label for="password">Password</label>
-					<input type="password" class="form-control" id="password" placeholder="Password">
+					<input type="password" class="form-control" name="Password" id="Password" placeholder="Password">
 					</div>
 					<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" placeholder="Email">
+					<input type="email" class="form-control" name="Email" id="Email" placeholder="Email">
 					</div>
 					<div class="form-group">
 					<label for="ktp">Nomor KTP</label>
-					<input type="text" class="form-control" id="KTP" placeholder="Nomor KTP">
+					<input type="text" class="form-control" name="KTP" id="KTP" placeholder="Nomor KTP">
 					</div>
 					<div class="form-group">
 					<label for="kontak">Nomor Kontak</label>
-					<input type="text" class="form-control" id="kontak" placeholder="Nomor Kontak">
+					<input type="text" class="form-control" name="Kontak" id="Kontak" placeholder="Nomor Kontak">
 					</div>
-					
-					<button type="submit" class="btn btn-default">Submit</button>
+					<?php
+						if ($error === '');
+						else
+							echo '<p style="{color: red}">'.$error.'</p>';
+					?>
+					<button type="submit" name="submit" value="simpan" class="btn btn-default">Simpan</input>
 					</form>
 
 				</div>
