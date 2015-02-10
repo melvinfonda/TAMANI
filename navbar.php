@@ -10,14 +10,11 @@ session_start();
 			
 		</div>
 		<ul class="nav navbar-nav navbar-right">
-
-				<li class="page-scroll">
-					<a href="crud_taman.php">Taman</a>
-				</li>
-			<li class="page-scroll">
-				<a href="index.php">Daftar Pengaduan</a>
-			</li>
 			<?php
+				if ($_SESSION['login_user']=="admin")
+					echo'<li class="page-scroll">
+							<a href="crud_taman.php">Taman</a>
+						</li>';
 				if (isset($_SESSION['login_user']))
 					require_once('bar_logged.php');
 				else
