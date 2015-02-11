@@ -1,4 +1,29 @@
 <?php
+function ubah_status_pengaduan($no, $status) {
+	$mysqli = new mysqli("localhost", "root", "", "tamani");
+		
+	// Check connection
+	if (mysqli_connect_errno()) {
+		return "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+	
+	/* Prepared statement, stage 1: prepare */
+	if (!($stmt = $mysqli->prepare("UPDATE pengaduan SET status = ? WHERE no_pengaduan = ?"))) {
+		return "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	}
+	
+	/* Prepared statement, stage 2: bind and execute */
+	if (!$stmt->bind_param("ii", $status, $no)) {
+		return "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	if (!$stmt->execute()) {
+		return "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	return '';
+}
+
 function simpan_user($mysqli, $uinfo) {
 	/* Prepared statement, stage 1: prepare */
 	if (!($stmt = $mysqli->prepare("INSERT INTO user(username, password) VALUES (?, ?)"))) {

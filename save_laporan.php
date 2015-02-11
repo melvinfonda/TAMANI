@@ -19,12 +19,14 @@
 	$no_pengaduan=$_POST['nomor_pengaduan'];
 	$id_instansi=$_SESSION['id_instansi'];
 
-	echo $itanggal." ".$isi." ".$no_pengaduan." ".$id_instansi;
-
-	mysqli_query($mysqli,"INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, id_instansi) 
-		VALUES ('', '$itanggal','$isi','$no_pengaduan','$id_instansi')");
-
+	if (!mysqli_query($mysqli,"INSERT INTO tindak_lanjut (tanggal, isi, no_pengaduan, id_instansi) 
+		VALUES ($itanggal,'$isi',$no_pengaduan,$id_instansi)")) {
+		echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	}
 	
+	if (!mysqli_query($mysqli,"UPDATE pengaduan SET status=30 WHERE no_pengaduan=$no_pengaduan")) {
+		echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	}
 	
 	/* close connection */
 	$mysqli->close();

@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
@@ -15,6 +12,8 @@ session_start();
 					$privilege = $_SESSION['privilege'];
 					if ($privilege === 10)
 						require_once('bar_logged.php');
+					else if ($privilege === 20)
+						require_once('bar_admin.php');
 					else if ($privilege === 30)
 						require_once('bar_terkait.php');
 				} else

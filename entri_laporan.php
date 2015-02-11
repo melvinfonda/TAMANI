@@ -1,5 +1,20 @@
-<?php require_once('db_helper.php');
+<?php
+	session_start();
+	
+	if (!isset($_SESSION['privilege']))
+		$fine = false;
+	else if ($_SESSION['privilege'] === 30)
+		$fine = true;
+	else
+		$fine = false;
+	
+	if (!isset($_GET['no_pengaduan']))
+		$fine = false;
+	
+	if (!$fine)
+		header('Location: index.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,10 +51,7 @@
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 					<form method="post" action="save_laporan.php">
-					<div class="form-group">
-					<label for="nomorpengaduan">Nomor Pengaduan</label>
-					<input type="text" class="form-control" name="nomor_pengaduan" placeholder="Nomor Pengaduan">
-					</div>
+					<input type="hidden" name="nomor_pengaduan" value="<?php echo $_GET['no_pengaduan']; ?>">
 					<div class="form-group">
 					<label for="Tanggal">Tanggal</label>
 					<input type="date" class="form-control" name="tanggal">

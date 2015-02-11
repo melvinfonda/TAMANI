@@ -1,7 +1,11 @@
 <?php
+session_start();
 require_once('login.php'); // Includes Login Script
 require_once('db_helper.php');
 require_once('view.php');
+$level = 0;
+if (isset($_SESSION['privilege']))
+	$level = $_SESSION['privilege'];
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +33,7 @@ require_once('view.php');
 			<?php
 			$pengaduans = get_all_pengaduan();
 			foreach ($pengaduans as $pengaduan) {
-				echo format_pengaduan($pengaduan);
+				echo format_pengaduan($pengaduan, $level);
 			}
 			?>
 		</div>

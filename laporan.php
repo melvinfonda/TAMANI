@@ -2,6 +2,13 @@
 require_once('login.php'); // Includes Login Script
 require_once('db_helper.php');
 require_once('view.php');
+
+if (!isset($_GET['nomor']))
+	header('Location: index.php');
+
+$laporan = get_laporan($_GET['nomor']);
+if (!$laporan)
+	header('Location: index.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +42,6 @@ require_once('view.php');
         <div class="thumbnail">
           <div class="caption">
             <?php 
-              $laporan=get_laporan($_GET['nomor']);
               echo format_laporan($laporan);
             ?>
              

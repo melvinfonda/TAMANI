@@ -1,7 +1,6 @@
 <?php
-require_once('db_helper.php');
-
-function format_pengaduan($pengaduan) {
+function format_pengaduan($pengaduan, $level) {
+	// always display this.
 	$result = 
 '<div class="col-sm-12 col-md-12">
 	<div class="thumbnail">
@@ -19,19 +18,46 @@ function format_pengaduan($pengaduan) {
 		<button type="button" class="btn btn-primary">Laporan</button>
 		</a>';
 	
-	$result = $result.'
-		</div>
-	</div>
-</div>';
+	
+	if ($level === 20) { // admin
+		if (is_null($pengaduan['no_tindak_lanjut'])) {
+			$result = $result.'<form action="ubah_status.php" method="post">';
+			$result = $result.'<input type="hidden" name="no_pengaduan" value="'.$pengaduan['no_pengaduan'].'"/>';
+			$result = $result.'<select name="status">';
+			for ($status = 10; $status <= 20; $status += 10) {
+				if ($status == $pengaduan['status']) // int and str comp
+					$result = $result.'<option value="'.$status.'" selected>';
+				else
+					$result = $result.'<option value="'.$status.'">';
+				
+				$result = $result.keterangan_status($status).'</option>';
+			}
+			$result = $result.'</select>
+			<button type="submit" class="btn btn-primary">Ubah</button></form>';
+		}
+		
+	} else if ($level === 30) { // dinas terkait
+		if (is_null($pengaduan['no_tindak_lanjut'])) {
+			$result = $result.'<a href="entri_laporan.php?no_pengaduan='.$pengaduan['no_pengaduan'].'">
+				<button type="button" class="btn btn-primary">Tambah Laporan</button>
+				</a>';
+		}
+	}
+	$result = $result.'</div></div></div>';
 
 	return $result;
 }
 
 function keterangan_status($sstatus) {
-	$belum_diproses =
-'belum diproses';
-	if ($sstatus === '10')
+	$belum_diproses = 'belum diproses';
+	$sedang_diproses = 'sedang diproses';
+	$sudah_diproses = 'sudah diproses';
+	if ($sstatus == 10)
 		return $belum_diproses;
+	else if ($sstatus == 20)
+		return $sedang_diproses;
+	else if ($sstatus == 30)
+		return $sudah_diproses;
 }
 
 function nama_bulan($ibulan) {
