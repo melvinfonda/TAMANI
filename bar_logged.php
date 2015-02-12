@@ -2,7 +2,7 @@
 	<a href="entri_aduan.php">Tambah Pengaduan</a>
 </li>
 <li class="page-scroll">
-	<a href="#"><?php echo $_SESSION['login_user']; ?></a>
+	<a><?php echo $_SESSION['login_user']; ?> </a>
 </li>
 
 <li class="page-scroll">

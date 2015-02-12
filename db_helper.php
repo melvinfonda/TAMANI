@@ -205,7 +205,7 @@ function get_instansi($id)
 		exit();
 	}
 
-	$result = $mysqli->query("SELECT * FROM instansi WHERE id=".$id."");
+	$result = $mysqli->query("SELECT * FROM instansi WHERE id=".$id);
 	$row = mysqli_fetch_array($result);
 	
 	/* close connection */

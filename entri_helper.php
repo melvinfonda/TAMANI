@@ -9,7 +9,7 @@ function say_sorry() {
 function display_form($tamans, $instansis) {
 	echo
 '<div class="col-lg-8 col-lg-offset-2">
-	<form method="post" action="save_aduan.php">
+	<form method="post" action="save_aduan.php" onSubmit="return cekkosong()">
 		<div class="form-group">
 			<label for="Judul">Judul</label>
 			<input type="text" class="form-control" name="Judul" id="judul" placeholder="Judul">
@@ -28,7 +28,7 @@ function display_form($tamans, $instansis) {
 		</div>
 		<div class="form-group">
 			<label for="isi">Isi Aduan</label>
-			<textarea class="form-control" name="Isi" rows="3"></textarea>
+			<textarea class="form-control" name="Isi" rows="3" id="isi"></textarea>
 		</div>
 		<div class="form-group">
 			<div class="btn-group">

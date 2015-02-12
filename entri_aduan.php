@@ -1,4 +1,6 @@
 <?php
+
+  session_start();
 	require_once('db_helper.php');
 	require_once('entri_helper.php');
 	$tamans = get_all_garden();
@@ -47,6 +49,26 @@
         </div>
     </section>
 
+<script>
+
+function trim(s) {
+   return s.replace (/^\s+|\s+$/g, '');
+}
+
+function cekkosong()
+{
+
+  var judul=trim(document.getElementById("judul").value);
+  var isi=trim(document.getElementById("isi").value);
+  console.log(judul);
+  console.log(isi);
+
+  return judul !="" && isi !="";
+
+
+}
+
+</script>
 	
 </body>
 </html>
