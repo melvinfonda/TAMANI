@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once('login.php'); // Includes Login Script
 require_once('db_helper.php');
 require_once('view.php');
 $level = 0;

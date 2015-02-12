@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('save_user.php');
 ?>
 <!DOCTYPE html>

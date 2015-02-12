@@ -50,8 +50,11 @@ WHERE username='$username' AND password='$password';");
 	
 	$connection->close(); // Closing Connection
 }}
-if ($_POST['submit'] == "logout") {
+else if ($_POST['submit'] == "logout") {
+	session_unset();
 	session_destroy();
 }
+$_SESSION['error'] = $error;
+header("Location: ".$_SERVER["HTTP_REFERER"]);
 } // END if (isset($_POST['submit']))
 ?>
