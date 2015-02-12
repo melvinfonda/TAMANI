@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('db_helper.php');
 require_once('view.php');
 
@@ -7,10 +8,9 @@ if (!isset($_GET['nomor']))
 	header('Location: index.php');
 
 $laporan = get_laporan($_GET['nomor']);
-var_dump($laporan);
 
 if (!$laporan)
-	//header('Location: index.php');
+	header('Location: index.php');
 ?>
 <!DOCTYPE html>
 <html>

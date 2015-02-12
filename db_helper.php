@@ -89,7 +89,7 @@ function get_all_pengaduan() {
 	$result = $mysqli->query("SELECT pengaduan.*, taman.nama nama_taman, masyarakat.nama nama_pelapor, tindak_lanjut.nomor no_tindak_lanjut
 FROM ((pengaduan JOIN masyarakat ON pengaduan.username_pelapor = masyarakat.username)
 JOIN taman ON pengaduan.id_taman = taman.id) LEFT JOIN tindak_lanjut 
-ON pengaduan.no_pengaduan = tindak_lanjut.no_pengaduan");
+ON pengaduan.no_pengaduan = tindak_lanjut.no_pengaduan ORDER BY pengaduan.tanggal DESC");
 	$rows = array();
 	for ($i = 0; $i < $result->num_rows; ++$i) {		
 		$row = $result->fetch_assoc();		
@@ -161,10 +161,9 @@ function get_laporan($id_pengaduan ){
 	/* check connection */
 	if (mysqli_connect_errno()) {
 		printf("Connect failed: %s\n", mysqli_connect_error());
-		exit();
 	}
 
-	$result = $mysqli->query("SELECT * FROM tindak_lanjut WHERE no_pengaduan=".$id_pengaduan."");
+	$result = $mysqli->query("SELECT * FROM tindak_lanjut WHERE nomor=".$id_pengaduan."");
 	$row = mysqli_fetch_array($result);
 	
 	/* close connection */

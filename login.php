@@ -49,12 +49,18 @@ WHERE username='$username' AND password='$password';");
 	}
 	
 	$connection->close(); // Closing Connection
-}}
+}
+	header("Location: ".$_SERVER["HTTP_REFERER"]);
+}
 else if ($_POST['submit'] == "logout") {
 	session_unset();
 	session_destroy();
+	header("Location: index.php");
 }
 $_SESSION['error'] = $error;
-header("Location: ".$_SERVER["HTTP_REFERER"]);
-} // END if (isset($_POST['submit']))
+
+} else { // END if (isset($_POST['submit']))
+	header("Location: ".$_SERVER["HTTP_REFERER"]);
+}
+
 ?>
