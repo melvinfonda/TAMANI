@@ -24,7 +24,7 @@
 		echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
 	}
 	
-	if (!mysqli_query($mysqli,"UPDATE pengaduan SET status=30 WHERE no_pengaduan=$no_pengaduan")) {
+	if (!mysqli_query($mysqli,"UPDATE pengaduan SET status=50 WHERE no_pengaduan=$no_pengaduan")) {
 		echo "Query failed: (" . $mysqli->errno . ") " . $mysqli->error;
 	}
 	

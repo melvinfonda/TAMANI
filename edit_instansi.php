@@ -1,18 +1,8 @@
 <?php
 	session_start();
-    $id = $_GET['var'];
-    $con=mysqli_connect("localhost","root","","tamani");
-    // Check connection
-    if (mysqli_connect_errno()) {
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-    $query = mysqli_query($con,"SELECT nama, lokasi FROM taman WHERE id=$id");
-    while ($hasil = mysqli_fetch_array($query)) {
-        $nama = $hasil['nama'];
-        $lokasi = $hasil['lokasi'];
-    }
+    $id = $_GET['id'];
+	$instansi = get_instansi($id);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><br><br>Edit Garden</h2>
+                    <h2><br><br>Edit Intansi</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -49,7 +39,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form method="post" action="save_old_garden.php?var=<?php echo $id; ?>">
+					<form method="post" action="update_instansi.php?var=<?php echo $id; ?>">
 					<div class="form-group">
 					<label for="nama">Nama Taman</label>
 					<input type="text" class="form-control" value="<?php echo $nama;?>" name="Nama" id="Nama" placeholder="Nama Taman">

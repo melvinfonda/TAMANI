@@ -24,7 +24,7 @@ function format_pengaduan($pengaduan, $level) {
 			$result = $result.'<form action="ubah_status.php" method="post">';
 			$result = $result.'<input type="hidden" name="no_pengaduan" value="'.$pengaduan['no_pengaduan'].'"/>';
 			$result = $result.'<select name="status">';
-			for ($status = 10; $status <= 20; $status += 10) {
+			for ($status = 10; $status <= 40; $status += 10) {
 				if ($status == $pengaduan['status']) // int and str comp
 					$result = $result.'<option value="'.$status.'" selected>';
 				else
@@ -57,6 +57,10 @@ function keterangan_status($sstatus) {
 	else if ($sstatus == 20)
 		return $sedang_diproses;
 	else if ($sstatus == 30)
+		return "ditolak";
+	else if ($sstatus == 40)
+		return "duplikat";
+	else if ($sstatus == 50)
 		return $sudah_diproses;
 }
 
