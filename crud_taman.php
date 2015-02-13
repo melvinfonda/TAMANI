@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require_once('db_helper.php');
+	$gardens = get_all_garden();
 ?>
 
 <!DOCTYPE html>
@@ -43,15 +44,19 @@
 				</div>
             </div>
             <div class="row">                               
-				<table class="table" id="custom_table" width="100%">
-					<tr>
+				<?php
+					if (empty($gardens))
+						echo '<p>Belum ada taman.</p>';
+					
+					else {
+						echo '<table class="table" id="custom_table" width="100%">
+						<tr>
 						<th>Name</th>
 						<th>Location</th>
 						<th colspan="2">Operation</th>
-					</tr>
-					<?php
-						$gardens = get_all_garden();
-						foreach ($gardens as $garden) {
+					</tr>';
+					
+					foreach ($gardens as $garden) {
 							echo '<tr>
 							<td width="20%">'.$garden['nama'].'</td>
 							<td width="20%">'.$garden['lokasi'].'</td>
@@ -62,10 +67,18 @@
 								</form>
 							</td>
 							</tr>';
-							
 						}
+<<<<<<< HEAD
+						echo '</table>';
+					}
+				?>
+				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
+					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
+				</div>
+=======
 					?>					
 				</table>				
+>>>>>>> 5bef27764b09f3e792e7e72ff830930c09af10f9
 
             </div>
         </div>

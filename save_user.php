@@ -12,6 +12,8 @@ if (isset($_POST['submit'])) {
 		$user_info['no_kontak'] = $_POST['Kontak'];
 		$error = simpan_masyarakat($user_info);
 		
+		if (substr($error, 0, 22) === 'Execute failed: (1062)')
+			$error = 'Username sudah terdaftar';
 		if ($error === '')
 			header('Location: index.php');
 	}

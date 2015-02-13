@@ -35,7 +35,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form method="post">
+                    <form method="post" onSubmit="return isValid();">
 					<div class="form-group">
 					<label for="nama">Nama</label>
 					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama">
@@ -54,11 +54,11 @@
 					</div>
 					<div class="form-group">
 					<label for="ktp">Nomor KTP</label>
-					<input type="text" class="form-control" name="KTP" id="KTP" placeholder="Nomor KTP">
+					<input type="number" class="form-control" name="KTP" id="KTP" placeholder="Nomor KTP">
 					</div>
 					<div class="form-group">
 					<label for="kontak">Nomor Kontak</label>
-					<input type="text" class="form-control" name="Kontak" id="Kontak" placeholder="Nomor Kontak">
+					<input type="number" class="form-control" name="Kontak" id="Kontak" placeholder="Nomor Kontak">
 					</div>
 					<?php
 					if ($error === '');
@@ -88,6 +88,26 @@
             </div>
         </div>
     </footer>
+<script>
+function trim(s) {
+   return s.replace (/^\s+|\s+$/g, '');
+}
+
+function isValid() {
+	var nama = trim(document.getElementById("Nama").value);
+	var username = trim(document.getElementById("Username").value);
+	var password = trim(document.getElementById("Password").value);
+	var email = trim(document.getElementById("Email").value);
+	var no_ktp = trim(document.getElementById("KTP").value);
+	var no_hp = trim(document.getElementById("Kontak").value);
 	
+	var valid = nama != "" && username != "" && password != "" && email != ""
+		&& no_ktp != "" && no_hp != "";
+	if (!valid) {
+		alert("Data yang anda masukkan salah.");
+	}
+	return valid;
+}
+</script>
 </body>
 </html>
