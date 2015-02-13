@@ -41,7 +41,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><br><br>Edit Garden</h2>
+                    <h1><br><br>Edit Taman</h1>
                     <hr class="star-primary">
                 </div>
             </div>

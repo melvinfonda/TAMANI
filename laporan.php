@@ -33,12 +33,12 @@ if (!$laporan)
 	<?php require_once('navbar.php'); ?>
 
 	<div class="container">
-    <div class="jumbotron">
-    <img src="img/tree.png"  style="float:left; width:150px;">
-    <img src="img/Bandung.png"  style="float:right; width:150px;">
-      <center><h1>TAMANI</h1>
-      <p>Website Pengaduan Taman Kota Bandung</p></center>
-    </div>
+    <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1><br><br>LAPORAN</h1>
+                    <hr class="star-primary">
+                </div>
+            </div>
     <div class="row">
       <div class="col-xs-12 c">
         <div class="thumbnail">

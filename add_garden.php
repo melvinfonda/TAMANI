@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><br><br>Add Garden</h2>
+                    <h1><br><br>Tambah Taman</h1>
                     <hr class="star-primary">
                 </div>
             </div>

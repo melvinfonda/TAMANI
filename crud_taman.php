@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><br><br>CRUD Taman</h2>
+                    <h1><br><br>Daftar Taman</h1>
                     <hr class="star-primary">
                 </div>
             </div>

@@ -23,6 +23,7 @@ if (isset($_SESSION['privilege']))
 	
 	<div class="container">
 		<div class="jumbotron">
+		<br>
 		<img src="img/tree.png"  style="float:left; width:150px;">
 		<img src="img/Bandung.png"  style="float:right; width:150px;">
 			<center><h1>TAMANI</h1>
