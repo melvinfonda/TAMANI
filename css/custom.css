@@ -1,0 +1,35 @@
+nav {
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #E8AE40;
+}
+
+
+.jumbotron {
+    color: #fff;
+    background: black;
+	background-color: rgba(0,0,0 , 0.25);
+}
+
+.caption , .thumbnail{
+	background: white;
+    color: #fff;
+}
+
+
+
+body {
+    color: #fff;
+	background-image : url("../img/garden.jpg");
+	background-size : 100%;
+	background-attachment : fixed;
+
+}
+
+#custom_table{
+	background-color: #f9f9f9;
+	color: black;
+	border-radius: 10px;
+	font-style: bold;
+	table-layout: auto;
+}
