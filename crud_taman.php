@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-offset-1 col-lg-2">
 					<br><br><br><br><br>
-					<div class="btn btn-default" href="add_garden.php" role="button">
+					<div class="btn btn-default" role="button">
 						<span class="glyphicon-plus"><a href="add_garden.php">  Add Garden</a></span>
 					</div>						
 				</div>
@@ -68,17 +68,10 @@
 							</td>
 							</tr>';
 						}
-<<<<<<< HEAD
 						echo '</table>';
 					}
 				?>
-				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
-					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
-				</div>
-=======
-					?>					
-				</table>				
->>>>>>> 5bef27764b09f3e792e7e72ff830930c09af10f9
+			
 
             </div>
         </div>
