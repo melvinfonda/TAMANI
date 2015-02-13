@@ -31,12 +31,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 text-center">
-                    <h2><br><br>CRUD Taman</h2>                    
+                    <h2><br><br>Daftar Taman</h2>                    
                 </div>
                 <div class="col-lg-offset-1 col-lg-2">
 					<br><br><br><br><br>
 					<div class="btn btn-default" href="add_garden.php" role="button">
-						<span class="glyphicon-plus">  Add Garden</span>
+						<span class="glyphicon-plus"><a href="add_garden.php">  Add Garden</a></span>
 					</div>						
 				</div>
 				<div class="col-lg-12 text-center">
