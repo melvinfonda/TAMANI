@@ -34,7 +34,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form method="post" action="save_new_garden.php">
+					<form method="post" action="save_new_garden.php" onSubmit="return isValid();">
     					<div class="form-group">
         					<label for="nama">Nama Taman</label>
         					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama Taman">
@@ -66,6 +66,24 @@
             </div>
         </div>
     </footer>
+
+<script>
+var trim_p = /^\s+|\s+$/g;
+
+function trim(s) {
+   return s.replace(trim_p, '');
+}
+
+function isValid() {
+	var nama = trim(document.getElementById("Nama").value);
+	var lokasi = trim(document.getElementById("Lokasi").value);
 	
+	var valid = nama != "" && lokasi != "";
+	if (!valid)
+		alert("Masukan anda salah.");
+	
+	return valid;
+}
+</script>
 </body>
 </html>

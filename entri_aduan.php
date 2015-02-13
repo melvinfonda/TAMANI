@@ -55,17 +55,15 @@ function trim(s) {
    return s.replace (/^\s+|\s+$/g, '');
 }
 
-function cekkosong()
-{
-
+function cekkosong() {
   var judul=trim(document.getElementById("judul").value);
   var isi=trim(document.getElementById("isi").value);
-  console.log(judul);
-  console.log(isi);
-
-  return judul !="" && isi !="";
-
-
+  
+  var valid = judul != "" && isi != "";
+  if (!valid) {
+	  alert("Data yang anda masukkan salah!");
+  }
+  return valid;
 }
 
 </script>
