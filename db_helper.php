@@ -233,13 +233,8 @@ function add_laporan($no_pengaduan)
 		exit();
 	}
 
-	//$mysqli_query($mysqli,"INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi)
-	//	VALUES (null, ubah_tanggal(".$_POST['tanggal']."),".$_POST['isi'].",'$no_pengaduan','1')");
-
-	echo "hahah";
-	$mysqli->query("INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi)
-		VALUES (null,'20140202','dsdsd','1','1')");
-
+	$mysqli_query($mysqli,"INSERT INTO tindak_lanjut (nomor, tanggal, isi, no_pengaduan, instansi)
+		VALUES (null, ubah_tanggal(".$_POST['tanggal']."),".$_POST['isi'].",'$no_pengaduan','1')");
 
 	/* close connection */
 	$mysqli->close();

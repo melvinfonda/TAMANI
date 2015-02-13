@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require_once('db_helper.php');
+	$d_instansi = get_all_instansi();
 ?>
 
 <!DOCTYPE html>
@@ -29,40 +30,49 @@
     
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2><br><br>Daftar Instansi</h2>
-                    <hr class="star-primary">
+                <div class="col-lg-9 text-center">
+                    <h2><br><br>Daftar Taman</h2>                    
                 </div>
+                <div class="col-lg-offset-1 col-lg-2">
+					<br><br><br><br><br>
+					<div class="btn btn-default" role="button">
+						<span class="glyphicon-plus"><a href="add_garden.php">  Add Garden</a></span>
+					</div>						
+				</div>
+				<div class="col-lg-12 text-center">
+					<hr class="star-primary">
+				</div>
             </div>
             <div class="row">                               
-				<table class="table">
+				<?php
+					if (empty($d_instansi))
+						echo '<p>Belum ada instansi.</p>';
+					
+					else {
+						echo '<table class="table" id="custom_table" width="100%">
 						<tr>
-						<th>Nama Instansi</th>
-						<th>Lokasi</th>
+						<th>Name</th>
+						<th>Location</th>
 						<th>Kategori</th>
 						<th colspan="2">Operation</th>
-					</tr>
-					<?php
-						$d_instansi = get_all_instansi();
-						foreach ($d_instansi as $instansi) {
+					</tr>';
+					
+					foreach ($gardens as $garden) {
 							echo '<tr>
-							<td>'.$instansi['nama'].'</td>
-							<td>'.$instansi['lokasi'].'</td>
-							<td>'.$instansi['kategori'].'</td>
-							<td><a class="btn btn-default" href="edit_instansi.php?id='.$instansi['id'].'" role="button">Edit</a></td>
-							<td><form action="hapus_instansi.php" onSubmit="return konfirmasi();">
-								<input type="hidden" name="id" value='.$instansi['id'].' />
-								<button type="submit" class="btn btn-default">Delete</button>
+							<td width="20%">'.$garden['nama'].'</td>
+							<td width="20%">'.$garden['lokasi'].'</td>
+							<td width="7%"><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
+							<td width="13%"><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
+								<input type="hidden" name="id" value='.$garden['id'].' />
+								<button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
 								</form>
 							</td>
 							</tr>';
-							
 						}
-					?>					
-				</table>				
-				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
-					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
-				</div>
+						echo '</table>';
+					}
+				?>
+
 
             </div>
         </div>
@@ -85,7 +95,7 @@
 <script type="text/javascript">
 	
 	  function konfirmasi(){
-      tanya=confirm('Apakah anda yakin menghapus instansi ini?');
+      tanya=confirm('Apakah anda yakin menghapus post ini?');
       return tanya;
   }
 </script>
