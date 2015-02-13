@@ -23,4 +23,14 @@ body {
 	background-image : url("../img/garden.jpg");
 	background-size : 100%;
 	background-attachment : fixed;
+
 }
+
+#custom_table{
+	background-color: #f9f9f9;
+	color: black;
+	border-radius: 10px;
+	font-style: bold;
+	table-layout: auto;
+}
+

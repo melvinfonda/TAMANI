@@ -30,10 +30,18 @@
     
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1><br><br>Daftar Taman</h1>
-                    <hr class="star-primary">
+                <div class="col-lg-9 text-center">
+                    <h2><br><br>CRUD Taman</h2>                    
                 </div>
+                <div class="col-lg-offset-1 col-lg-2">
+					<br><br><br><br><br>
+					<div class="btn btn-default" href="add_garden.php" role="button">
+						<span class="glyphicon-plus">  Add Garden</span>
+					</div>						
+				</div>
+				<div class="col-lg-12 text-center">
+					<hr class="star-primary">
+				</div>
             </div>
             <div class="row">                               
 				<?php
@@ -41,7 +49,7 @@
 						echo '<p>Belum ada taman.</p>';
 					
 					else {
-						echo '<table class="table">
+						echo '<table class="table" id="custom_table" width="100%">
 						<tr>
 						<th>Name</th>
 						<th>Location</th>
@@ -50,22 +58,27 @@
 					
 					foreach ($gardens as $garden) {
 							echo '<tr>
-							<td>'.$garden['nama'].'</td>
-							<td>'.$garden['lokasi'].'</td>
-							<td><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
-							<td><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
+							<td width="20%">'.$garden['nama'].'</td>
+							<td width="20%">'.$garden['lokasi'].'</td>
+							<td width="7%"><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
+							<td width="13%"><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
 								<input type="hidden" name="id" value='.$garden['id'].' />
 								<button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
 								</form>
 							</td>
 							</tr>';
 						}
+<<<<<<< HEAD
 						echo '</table>';
 					}
 				?>
 				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
 					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
 				</div>
+=======
+					?>					
+				</table>				
+>>>>>>> 5bef27764b09f3e792e7e72ff830930c09af10f9
 
             </div>
         </div>
