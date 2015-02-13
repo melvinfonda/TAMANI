@@ -71,7 +71,7 @@
 						echo '</table>';
 					}
 				?>
-			
+
 
             </div>
         </div>
