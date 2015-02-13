@@ -68,17 +68,12 @@
 							</td>
 							</tr>';
 						}
-<<<<<<< HEAD
 						echo '</table>';
 					}
 				?>
 				<div class="col-lg-offset-9 col-lg-3" style="margin-top: 50px;">
 					<a class="btn btn-default" href="add_garden.php" role="button">Add Garden</a>						
 				</div>
-=======
-					?>					
-				</table>				
->>>>>>> 5bef27764b09f3e792e7e72ff830930c09af10f9
 
             </div>
         </div>
