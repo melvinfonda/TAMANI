@@ -1,10 +1,9 @@
 <?php
-$id = $_POST['id'];
 $nama = $_POST['Nama'];
 $lokasi = $_POST['Lokasi'];
 $kategori = $_POST['Kategori'];
 
-if (!isset($id) || !isset($nama) || !isset($lokasi) || !isset($kategori))
+if (!isset($nama) || !isset($lokasi) || !isset($kategori))
 	header("Location: index.php");
 
 $con = mysqli_connect("localhost","root","","tamani");
@@ -17,8 +16,8 @@ $nama = mysqli_real_escape_string($con, $nama);
 $lokasi = mysqli_real_escape_string($con, $lokasi);
 $kategori = mysqli_real_escape_string($con, $kategori);
 
-mysqli_query($con, "UPDATE instansi SET nama='$nama', lokasi='$lokasi',
-	kategori='$kategori' WHERE id=$id");
+mysqli_query($con, "INSERT INTO instansi (nama, lokasi, kategori) VALUES ('$nama', 
+	'$lokasi', '$kategori')");
 
 mysqli_close($con);
 

@@ -1,11 +1,6 @@
 <?php
 	session_start();
 	require_once('db_helper.php');
-    $id = $_GET['id'];
-	$instansi = get_instansi($id);
-	$nama = $instansi['nama'];
-	$lokasi = $instansi['lokasi'];
-	$kategori = $instansi['kategori'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +16,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<title>Edit Instansi</title>
+<title>Tambah Instansi</title>
 </head>
 
 <body>
@@ -35,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2><br><br>Edit Intansi</h2>
+                    <h2><br><br>Tambah Intansi</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -43,19 +38,18 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form method="post" action="update_instansi.php" onSubmit="return isValid();">
-					<input type="hidden" name="id" value="<?php echo $id; ?>" />
+					<form method="post" action="insert_instansi.php" onSubmit="return isValid();">
 					<div class="form-group">
 					<label for="nama">Nama</label>
-					<input type="text" class="form-control" value="<?php echo $nama;?>" name="Nama" id="Nama" placeholder="Nama Instansi">
+					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama Instansi">
 					</div>
 					<div class="form-group">
 					<label for="username">Lokasi</label>
-					<input type="text" class="form-control" value="<?php echo $lokasi;?>" name="Lokasi" id="Lokasi" placeholder="Lokasi">
+					<input type="text" class="form-control" name="Lokasi" id="Lokasi" placeholder="Lokasi">
 					</div>
 					<div class="form-group">
 					<label for="username">Kategori</label>
-					<input type="text" class="form-control" value="<?php echo $kategori;?>" name="Kategori" id="Kategori" placeholder="Kategori">
+					<input type="text" class="form-control" name="Kategori" id="Kategori" placeholder="Kategori">
 					</div>
 					
 					<button type="submit" class="btn btn-default">Submit</button>

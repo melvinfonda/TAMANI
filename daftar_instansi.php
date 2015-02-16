@@ -25,45 +25,46 @@
 
  <!-- Navigation -->
    <?php require_once('navbar.php'); ?>
-   
+
       <!-- Registrasi Section -->
-    
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 text-center">
-                    <h2><br><br>Daftar Taman</h2>                    
+                    <h2><br><br>Daftar Instansi</h2>
                 </div>
                 <div class="col-lg-offset-1 col-lg-2">
 					<br><br><br><br><br>
 					<div class="btn btn-default" role="button">
-						<span class="glyphicon-plus"><a href="add_garden.php">  Add Garden</a></span>
-					</div>						
+						<span class="glyphicon-plus"><a href="tambah_instansi.php">  Add Instansi</a></span>
+					</div>
 				</div>
 				<div class="col-lg-12 text-center">
 					<hr class="star-primary">
 				</div>
             </div>
-            <div class="row">                               
+            <div class="row">
 				<?php
 					if (empty($d_instansi))
 						echo '<p>Belum ada instansi.</p>';
-					
+
 					else {
 						echo '<table class="table" id="custom_table" width="100%">
 						<tr>
-						<th>Name</th>
-						<th>Location</th>
+						<th>Nama</th>
+						<th>Lokasi</th>
 						<th>Kategori</th>
 						<th colspan="2">Operation</th>
 					</tr>';
-					
-					foreach ($gardens as $garden) {
+
+					foreach ($d_instansi as $instansi) {
 							echo '<tr>
-							<td width="20%">'.$garden['nama'].'</td>
-							<td width="20%">'.$garden['lokasi'].'</td>
-							<td width="7%"><a class="btn btn-default" href="edit_garden.php?var='.$garden['id'].'" role="button">Edit</a></td>
-							<td width="13%"><form action="del_garden.php" method="post" onSubmit="return konfirmasi();">
-								<input type="hidden" name="id" value='.$garden['id'].' />
+							<td width="20%">'.$instansi['nama'].'</td>
+							<td width="20%">'.$instansi['lokasi'].'</td>
+							<td width="20%">'.$instansi['kategori'].'</td>
+							<td width="7%"><a class="btn btn-default" href="edit_instansi.php?id='.$instansi['id'].'" role="button">Edit</a></td>
+							<td width="13%"><form action="hapus_instansi.php" method="post" onSubmit="return konfirmasi();">
+								<input type="hidden" name="id" value='.$instansi['id'].' />
 								<button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
 								</form>
 							</td>
@@ -76,11 +77,11 @@
 
             </div>
         </div>
-    
+
 
     <!-- Footer -->
     <footer class="text-center" style="margin-top: 200px;">
-        
+
         <div class="footer-below">
             <div class="container">
                 <div class="row">
@@ -91,14 +92,14 @@
             </div>
         </div>
     </footer>
-	
+
 <script type="text/javascript">
-	
+
 	  function konfirmasi(){
-      tanya=confirm('Apakah anda yakin menghapus post ini?');
+      tanya=confirm('Apakah anda yakin menghapus instansi ini?');
       return tanya;
   }
 </script>
-    
+
 </body>
 </html>
