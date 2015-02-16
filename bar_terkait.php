@@ -1,7 +1,4 @@
 <li class="page-scroll">
-	<a href="index.php">Daftar Laporan</a>
-</li>
-<li class="page-scroll">
 	<a><?php echo $_SESSION['login_user']; ?> </a>
 </li>
 <li class="page-scroll">

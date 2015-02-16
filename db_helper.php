@@ -89,7 +89,7 @@ function get_all_pengaduan() {
 	$result = $mysqli->query("SELECT pengaduan.*, taman.nama nama_taman, masyarakat.nama nama_pelapor, tindak_lanjut.nomor no_tindak_lanjut
 FROM ((pengaduan JOIN masyarakat ON pengaduan.username_pelapor = masyarakat.username)
 JOIN taman ON pengaduan.id_taman = taman.id) LEFT JOIN tindak_lanjut
-ON pengaduan.no_pengaduan = tindak_lanjut.no_pengaduan ORDER BY pengaduan.tanggal DESC");
+ON pengaduan.no_pengaduan = tindak_lanjut.no_pengaduan ORDER BY pengaduan.tanggal, no_pengaduan DESC");
 	$rows = array();
 	for ($i = 0; $i < $result->num_rows; ++$i) {
 		$row = $result->fetch_assoc();
