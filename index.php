@@ -32,7 +32,16 @@ if (isset($_SESSION['privilege']))
 		<div class="row">
 			<?php
 			$pengaduans = get_all_pengaduan();
-			if (empty($pengaduans)) {
+			if (isset($_SESSION['id_instansi'])) {
+				$to_display = array();
+				foreach ($pengaduans as $pengaduan)
+					if ($pengaduan['id_instansi'] == $_SESSION['id_instansi'] && $pengaduan['status'] == 20)
+						$to_display[] = $pengaduan;
+				
+			} else 
+				$to_display = $pengaduans;
+
+			if (empty($to_display)) {
 				echo '<div class="col-sm-12 col-md-12">
 				<div class="thumbnail">
 				<div class="caption">
@@ -40,15 +49,6 @@ if (isset($_SESSION['privilege']))
 				</div></div></div>';
 
 			} else {
-				if (isset($_SESSION['id_instansi'])) {
-					$to_display = array();
-					foreach ($pengaduans as $pengaduan)
-						if ($pengaduan['id_instansi'] == $_SESSION['id_instansi'])
-							$to_display[] = $pengaduan;
-					
-				} else
-					$to_display = $pengaduans;
-
 				foreach ($to_display as $pengaduan)
 					echo format_pengaduan($pengaduan, $level);
 			}

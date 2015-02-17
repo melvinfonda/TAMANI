@@ -63,11 +63,6 @@
 							<td width="20%">'.$instansi['lokasi'].'</td>
 							<td width="20%">'.$instansi['kategori'].'</td>
 							<td width="7%"><a class="btn btn-default" href="edit_instansi.php?id='.$instansi['id'].'" role="button">Edit</a></td>
-							<td width="13%"><form action="hapus_instansi.php" method="post" onSubmit="return konfirmasi();">
-								<input type="hidden" name="id" value='.$instansi['id'].' />
-								
-								</form>
-							</td>
 							</tr>';
 						}
 						echo '</table>';
