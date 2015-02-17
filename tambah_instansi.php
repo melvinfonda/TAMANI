@@ -44,13 +44,21 @@
 					<input type="text" class="form-control" name="Nama" id="Nama" placeholder="Nama Instansi">
 					</div>
 					<div class="form-group">
-					<label for="username">Lokasi</label>
+					<label for="lokasi">Lokasi</label>
 					<input type="text" class="form-control" name="Lokasi" id="Lokasi" placeholder="Lokasi">
 					</div>
 					<div class="form-group">
-					<label for="username">Kategori</label>
+					<label for="kategori">Kategori</label>
 					<input type="text" class="form-control" name="Kategori" id="Kategori" placeholder="Kategori">
 					</div>
+                    <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="Username" id="Username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Password">
+                    </div>
 					
 					<button type="submit" class="btn btn-default">Submit</button>
 					</form>					
